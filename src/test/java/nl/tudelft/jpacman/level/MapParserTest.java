@@ -16,9 +16,11 @@ import java.util.List;
 import static org.mockito.ArgumentMatchers.*;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.*;
+
+import nl.tudelft.jpacman.board.BoardFactory;
+import nl.tudelft.jpacman.sprite.PacManSprites;
+import nl.tudelft.jpacman.sprite.Sprite;
 
 
 class MapParserTest {
@@ -61,8 +63,11 @@ class MapParserTest {
 //        verify(mockMapParser2).parseMap(map);
         //promote to a stub
             //but this test does not create a map with a wall... it just checks to see that parseMap returns null...
-        when(mockMapParser.parseMap(map)).thenReturn(null);
+        when(mockMapParser.parseMap(the_text)).thenReturn(null);
+        assertEquals(null, mockLevel);
 
+        verify(mockMapParser, times(1)).parseMap(the_text);
+        verifyNoMoreInteractions(mockMapParser);
         /// stuck on this part; don't know how to proceed
         /**
         Level mockLevel2 = mockMapParser2.parseMap(the_text);
@@ -86,6 +91,24 @@ class MapParserTest {
 //        when(mockMapParser.parseMap())
 //        verify(MapParser.parseMap());
 
+    }
+    @Test
+    void testMakeGhostSquare() {
+        LevelFactory levelCreatorMock = mock(LevelFactory.class);
+        BoardFactory boardCreatorMock = mock(BoardFactory.class);
+
+
+        MapParser mockMapParser = mock(MapParser.class);
+        MapParser mockMapParser2 = new MapParser(levelCreatorMock, boardCreatorMock);
+
+        Ghost ghost = mock(Ghost.class);
+        List<Ghost> ghosts = new ArrayList<>();
+        Square sqr = mockMapParser2.makeGhostSquare(ghosts, ghost);
+
+        verify(boardCreatorMock).createGround();
+        assertEquals(sqr, null);
+//        verify(mockMapParser2).makeGhostSquare(ghosts, ghost);
+//        PacManSprites sprites =?BoardFactory.Ground(sprites.getGroundSprite()));
     }
 
 }
