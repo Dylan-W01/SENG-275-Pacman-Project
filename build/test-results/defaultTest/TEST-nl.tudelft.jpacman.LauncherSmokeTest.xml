@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="nl.tudelft.jpacman.LauncherSmokeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-04-06T21:15:04" hostname="MacBook-Air-Berik.local" time="2.949">
+<testsuite name="nl.tudelft.jpacman.LauncherSmokeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-04-06T21:25:57" hostname="MacBook-Air-Berik.local" time="2.878">
   <properties/>
-  <testcase name="smokeTest()" classname="nl.tudelft.jpacman.LauncherSmokeTest" time="2.949"/>
+  <testcase name="smokeTest()" classname="nl.tudelft.jpacman.LauncherSmokeTest" time="2.878"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
