@@ -1,0 +1,15 @@
+/build
+/.gradle
+.gradle/
+.idea/
+.vscode/settings.json
+.settings/
+.classpath
+.project
+*.iml
+.DS_Store
+Thumbs.db
+*.log
+*.swp
+*.swo
+.env
