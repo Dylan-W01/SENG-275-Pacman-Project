@@ -30,4 +30,40 @@ public class DirectionTest {
     void directions_X(@ForAll("directions") Direction dir){
         assertThat(dir.getDeltaX()).isBetween(-1,1);
     }
+    @Property
+    void directions_Y(@ForAll("directions") Direction dir){
+        assertThat(dir.getDeltaY()).isBetween(-1,1);
+    }
+
+
+        @Property
+        void no_diagonal(@ForAll("directions") Direction dir ){
+            int dir_x = dir.getDeltaX();
+            int dir_y = dir.getDeltaY();
+            assertThat((dir_x == 0) ^ (dir_y == 0)).isTrue();
+    }
+
+    @Provide
+    Arbitrary<Direction[]> opposites() {
+        return Arbitraries.of(
+                new Direction[]{Direction.NORTH, Direction.SOUTH},
+                new Direction[]{Direction.SOUTH, Direction.NORTH},
+                new Direction[]{Direction.EAST, Direction.WEST},
+                new Direction[]{Direction.WEST, Direction.EAST}
+        );
+    }
+
+    @Property
+    void cancel_out(@ForAll("opposites") Direction[] pair){
+    assertThat(pair[0].getDeltaY() + pair[1].getDeltaY()).isEqualTo(0);
+    assertThat(pair[1].getDeltaY() + pair[0].getDeltaY()).isEqualTo(0);
+
+    }
+
+
+
+
+
+
+
 }
