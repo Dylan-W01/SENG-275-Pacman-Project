@@ -51,15 +51,28 @@ class MapParserTest {
 
         MapParser mockMapParser = mock(MapParser.class);
         MapParser mockMapParser2 = new MapParser(levelCreatorMock, boardCreatorMock);
-
-        Level mockLevel = mockMapParser.parseMap(map);
+        List<String> the_text = List.of("#");
+        Level mockLevel = mockMapParser.parseMap(the_text);
         //verifying that parseMap() has been called
         //promote dummy to spy
-        verify(mockMapParser).parseMap(map);
+//        verify(mockMapParser).parseMap(map);
+
+        verify(mockMapParser).parseMap(the_text);
 //        verify(mockMapParser2).parseMap(map);
         //promote to a stub
-            //but this test does not create a map with a wall... it just checks to see that parseMap returns what it's supposed to.
+            //but this test does not create a map with a wall... it just checks to see that parseMap returns null...
         when(mockMapParser.parseMap(map)).thenReturn(null);
+
+        /// stuck on this part; don't know how to proceed
+        /**
+        Level mockLevel2 = mockMapParser2.parseMap(the_text);
+        Square[][] grid = new Square[1][1];
+        Board board = boardCreatorMock.createBoard(grid);
+        List<Ghost> ghosts = new ArrayList<>();
+        List<Square> startPositions = new ArrayList<>();
+        when(mockMapParser2.parseMap(map)).thenReturn(levelCreatorMock.createLevel(board, ghosts, startPositions));
+         **/
+
 
 
 //        Square[][] grid = new Square[width][height];
