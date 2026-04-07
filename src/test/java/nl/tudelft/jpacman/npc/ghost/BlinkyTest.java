@@ -62,11 +62,7 @@ class BlinkyTest {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-//        GhostMapParser();
-//        GameFactory gf = getGameFactory();
-//        Level level = makeLevel();
-//        Game game = gf.createSinglePlayerGame(level, loadPointCalculator());
-//        return game;
+
 
     }
 
