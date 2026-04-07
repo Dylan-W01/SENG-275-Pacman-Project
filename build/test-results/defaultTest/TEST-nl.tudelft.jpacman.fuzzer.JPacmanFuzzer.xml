@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="nl.tudelft.jpacman.fuzzer.JPacmanFuzzer" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-04-07T03:01:26" hostname="gm-pc" time="0.993">
+<testsuite name="nl.tudelft.jpacman.fuzzer.JPacmanFuzzer" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-04-07T03:16:08" hostname="gm-pc" time="1.542">
   <properties/>
-  <testcase name="repetition 1 of 5" classname="nl.tudelft.jpacman.fuzzer.JPacmanFuzzer" time="0.111"/>
-  <testcase name="repetition 2 of 5" classname="nl.tudelft.jpacman.fuzzer.JPacmanFuzzer" time="0.197"/>
-  <testcase name="repetition 3 of 5" classname="nl.tudelft.jpacman.fuzzer.JPacmanFuzzer" time="0.207"/>
-  <testcase name="repetition 4 of 5" classname="nl.tudelft.jpacman.fuzzer.JPacmanFuzzer" time="0.148"/>
-  <testcase name="repetition 5 of 5" classname="nl.tudelft.jpacman.fuzzer.JPacmanFuzzer" time="0.319"/>
+  <testcase name="repetition 1 of 5" classname="nl.tudelft.jpacman.fuzzer.JPacmanFuzzer" time="0.269"/>
+  <testcase name="repetition 2 of 5" classname="nl.tudelft.jpacman.fuzzer.JPacmanFuzzer" time="0.538"/>
+  <testcase name="repetition 3 of 5" classname="nl.tudelft.jpacman.fuzzer.JPacmanFuzzer" time="0.569"/>
+  <testcase name="repetition 4 of 5" classname="nl.tudelft.jpacman.fuzzer.JPacmanFuzzer" time="0.045"/>
+  <testcase name="repetition 5 of 5" classname="nl.tudelft.jpacman.fuzzer.JPacmanFuzzer" time="0.114"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

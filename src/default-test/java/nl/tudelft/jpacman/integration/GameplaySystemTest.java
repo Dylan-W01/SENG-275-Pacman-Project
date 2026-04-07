@@ -28,7 +28,30 @@ public class GameplaySystemTest {
     }
 
     @Test
-    void gameCanBePausedAndResumed() {
+    void gameCanBePaused() {
+        launcher.launch();
+        Game game = launcher.getGame();
+
+        game.start();
+        game.stop();
+
+        assertThat(game.isInProgress()).isFalse();
+    }
+
+    @Test
+    void gameCanBeResumed() {
+        launcher.launch();
+        Game game = launcher.getGame();
+
+        game.start();
+        game.stop();
+        game.start();
+
+        assertThat(game.isInProgress()).isTrue();
+    }
+
+    @Test
+    void movesDontWorkWhenPaused() {
         launcher.launch();
         Game game = launcher.getGame();
         Player player = game.getPlayers().get(0);
@@ -38,16 +61,9 @@ public class GameplaySystemTest {
         int scoreWhilePlaying = player.getScore();
 
         game.stop();
-        assertThat(game.isInProgress()).isFalse();
-
         game.move(player, Direction.EAST);
+
         assertThat(player.getScore()).isEqualTo(scoreWhilePlaying);
-
-        game.start();
-        assertThat(game.isInProgress()).isTrue();
-
-        game.move(player, Direction.EAST);
-        assertThat(player.getScore()).isGreaterThanOrEqualTo(scoreWhilePlaying);
     }
 
     @Test
@@ -58,19 +74,16 @@ public class GameplaySystemTest {
 
         game.start();
         int initialScore = player.getScore();
-
         game.move(player, Direction.EAST);
 
         assertThat(player.getScore()).isGreaterThanOrEqualTo(initialScore);
     }
 
-    // @Test
-    // void canLoadAndPlayCustomMap() {
-    //     launcher.withMapFile("/simplemap.txt").launch();
-    //     Game game = launcher.getGame();
+    @Test
+    void customMapCanBeLoaded() {
+        launcher.withMapFile("/simplemap.txt").launch();
+        Game game = launcher.getGame();
 
-    //     game.start();
-    //     assertThat(game.isInProgress()).isTrue();
-    //     assertThat(game.getLevel().remainingPellets()).isGreaterThan(0);
-    // }
+        assertThat(game.getPlayers()).isNotEmpty();
+    }
 }
