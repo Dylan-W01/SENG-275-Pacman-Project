@@ -1,16 +1,5 @@
 package nl.tudelft.jpacman.fuzzer;
 
-import nl.tudelft.jpacman.Launcher;
-import nl.tudelft.jpacman.board.Direction;
-import nl.tudelft.jpacman.game.Game;
-import nl.tudelft.jpacman.level.Player;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.RepeatedTest;
-import org.junit.jupiter.api.RepetitionInfo;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -19,13 +8,24 @@ import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
 import java.util.Random;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.RepeatedTest;
+import org.junit.jupiter.api.RepetitionInfo;
+
+import nl.tudelft.jpacman.Launcher;
+import nl.tudelft.jpacman.board.Direction;
+import nl.tudelft.jpacman.game.Game;
+import nl.tudelft.jpacman.level.Player;
+
 /**
  * A basic fuzzer trying out random moves and writing logs in output files. Number of runs is a
  * tunable parameter. Each run initiates the game and is played until PacMan dies.
  *
  * @author Azqa Nadeem
  */
-@Disabled
+
 class JPacmanFuzzer {
     private static final int RUNS = 5;
     private static final String LOG_HEADER =

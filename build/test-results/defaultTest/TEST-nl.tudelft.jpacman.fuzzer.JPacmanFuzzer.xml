@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="nl.tudelft.jpacman.fuzzer.JPacmanFuzzer" tests="1" skipped="1" failures="0" errors="0" timestamp="2026-04-06T23:34:25" hostname="MacBook-Air-Berik.local" time="0.0">
+<testsuite name="nl.tudelft.jpacman.fuzzer.JPacmanFuzzer" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-04-07T03:01:26" hostname="gm-pc" time="0.993">
   <properties/>
-  <testcase name="fuzzerTest(RepetitionInfo)" classname="nl.tudelft.jpacman.fuzzer.JPacmanFuzzer" time="0.0">
-    <skipped/>
-  </testcase>
+  <testcase name="repetition 1 of 5" classname="nl.tudelft.jpacman.fuzzer.JPacmanFuzzer" time="0.111"/>
+  <testcase name="repetition 2 of 5" classname="nl.tudelft.jpacman.fuzzer.JPacmanFuzzer" time="0.197"/>
+  <testcase name="repetition 3 of 5" classname="nl.tudelft.jpacman.fuzzer.JPacmanFuzzer" time="0.207"/>
+  <testcase name="repetition 4 of 5" classname="nl.tudelft.jpacman.fuzzer.JPacmanFuzzer" time="0.148"/>
+  <testcase name="repetition 5 of 5" classname="nl.tudelft.jpacman.fuzzer.JPacmanFuzzer" time="0.319"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
