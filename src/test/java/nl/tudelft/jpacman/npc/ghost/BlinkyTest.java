@@ -83,17 +83,30 @@ class BlinkyTest {
 
 
     }
-    /**
-     * Tests if the algorithm can find a path in a straight line.
-     */
-//    @Test
-//    void testSimplePath() {
-//
-//    }
+    /*
+    * Testing order of priority for directions:
+    * 1. Up
+    * 2. Left
+    * 3. Down
+    * 4. Right
+    * */
+    @Test
+    void testnextAiMove2() {
 
 
+        try (InputStream i = getClass().getResourceAsStream("/blinkytestboard2.txt")) {
+            Board b = parser.parseMap(i).getBoard();
+            Square sqr_from = b.squareAt(2, 2);
+            Square sqr_to = b.squareAt(1, 1);
+            List<Direction> path = Navigation
+                    .shortestPath(sqr_from, sqr_to, mock(Unit.class));
+            assertThat(path).containsExactly(Direction.NORTH, Direction.WEST);
 
-    //Given ghost G and player P are on a map
-    // when vertical distance between G and P is greater than horizontal distance
-    // then G moves towards P vertically
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
+    }
+
 }
